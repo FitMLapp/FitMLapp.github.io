@@ -1,2 +1,68 @@
-# FitMLapp.github.io
-FitML Support webpages
+📱 FitML — App Support & Help Center
+
+Welcome to the official support page for FitML, the intelligent fitness tracking and workout analysis app.
+If you need help, this is the right place.
+
+🆘 Need Help Quickly?
+
+If you are experiencing issues or have questions, you may contact support directly:
+
+📩 support@fitml.app
+
+(If you don’t have a support email yet, replace with the one you plan to use)
+
+Typical Response Time: 24–48 hours
+
+🔧 Common Topics & Troubleshooting
+Topic	Help
+Subscription & Billing	Issues unlocking premium, restoring purchases
+Accounts & Login	Apple/Email sign-in issues, verification problems
+Workout Tracking	Missing sets, incorrect stats, edit/delete support
+Backups & Data	Cloud backup/restore help, device migration
+App Bugs & Crashes	Report broken pages, errors, lost data, UI problems
+Feature Requests	Suggest new metrics, workout templates, analytics
+
+If your question isn’t listed here, contact us — we’re happy to help.
+
+📝 How to Report an Issue
+
+When contacting support, including the following details helps us respond faster:
+
+Device model (iPhone 12, Pixel 8, etc.)
+
+OS version
+
+App version (found in Settings → About)
+
+Steps to reproduce the issue
+
+Screenshots/video if available
+
+💬 Feature Requests & Feedback
+
+We actively improve FitML, and your input directly shapes future updates.
+
+If you have ideas for new features such as:
+
+New graph metrics or workout visualizations
+
+Advanced cardio statistics
+
+Custom exercise templates
+
+Gym equipment tracking improvements
+…we’d love to hear them.
+
+Submit feedback anytime via email: support@fitml.app
+
+📄 Legal Documents
+Document	Link
+Privacy Policy	URL to your hosted policy
+Terms of Use / EULA	URL to your terms page
+
+(Add the links once set — Notion, GitHub Pages, or PDF are all acceptable)
+
+Thank you for using FitML 🏋️‍♂️🔥
+
+We hope the app helps you track smarter, improve faster, and stay consistent.
+If you ever need help — we’re here.

@@ -7,9 +7,7 @@ If you need help, this is the right place.
 
 If you are experiencing issues or have questions, you may contact support directly:
 
-📩 support@fitml.app
-
-(If you don’t have a support email yet, replace with the one you plan to use)
+(Placeholder)
 
 Typical Response Time: 24–48 hours
 
@@ -53,7 +51,7 @@ Custom exercise templates
 Gym equipment tracking improvements
 …we’d love to hear them.
 
-Submit feedback anytime via email: support@fitml.app
+Submit feedback anytime via email: (Placeholder)
 
 📄 Legal Documents
 Document	Link

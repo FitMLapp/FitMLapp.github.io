@@ -55,10 +55,8 @@ Submit feedback anytime via email: (Placeholder)
 
 📄 Legal Documents
 Document	Link
-Privacy Policy	URL to your hosted policy
-Terms of Use / EULA	URL to your terms page
-
-(Add the links once set — Notion, GitHub Pages, or PDF are all acceptable)
+[Privacy Policy](https://www.termsfeed.com/live/36d54b38-b621-45df-bd9b-4c9aff41f9ea)
+[Terms of Use](https://www.termsfeed.com/live/dcf07289-9d67-4938-9a45-8d9a62e805a6)
 
 Thank you for using FitML 🏋️‍♂️🔥
 

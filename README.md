@@ -7,7 +7,7 @@ If you need help, this is the right place.
 
 If you are experiencing issues or have questions, you may contact support directly:
 
-(Placeholder)
+fitMLapp@yahoo.com
 
 Typical Response Time: 24–48 hours
 
@@ -51,7 +51,7 @@ Custom exercise templates
 Gym equipment tracking improvements
 …we’d love to hear them.
 
-Submit feedback anytime via email: (Placeholder)
+Submit feedback anytime via email: fitMLapp@yahoo.com
 
 📄 Legal Documents
 Document	Link

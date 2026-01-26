@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FitML — Smarter Workout Tracking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="FitML is an intelligent fitness tracker for workout logging, progress analytics, goals, and shareable cards. Generate and analyze routines with Premium."
+  />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --accent: #66f4ff;
+      --accent-soft: rgba(102, 244, 255, 0.1);
+      --text-main: #e6edf3;
+      --text-muted: #9da5b4;
+      --border-subtle: #30363d;
+      --danger: #ff6b6b;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+      --radius-lg: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px 48px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7));
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(102, 244, 255, 0.9);
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 650px;
+      margin-inline: auto;
+    }
+
+    /* simple nav row */
+    .nav {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(48, 54, 61, 0.7);
+      background: rgba(15, 23, 42, 0.65);
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .nav a:hover {
+      border-color: var(--accent-soft);
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 780px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    section {
+      background: radial-gradient(circle at top left, #1f2933 0, #020617 60%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-icon { font-size: 1.1rem; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul { padding-left: 18px; margin: 6px 0 0; }
+    li { margin: 2px 0; }
+
+    .support-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0 4px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.92rem;
+    }
+
+    .meta { font-size: 0.82rem; color: var(--text-muted); }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.12);
+      border: 1px solid rgba(45, 212, 191, 0.25);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #5eead4;
+      margin-left: 8px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(102, 244, 255, 0.08);
+      color: var(--text-main);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      border-color: rgba(102, 244, 255, 0.35);
+      background: rgba(102, 244, 255, 0.12);
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-highlight { color: var(--accent); font-weight: 500; }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+      <header>
+        <div class="app-badge">
+          <div class="dot"></div>
+          <span>FitML • Workout Tracker</span>
+        </div>
+
+        <h1>Smarter Workout Tracking</h1>
+        <p>
+          FitML helps you log workouts cleanly, see meaningful progress, and stay consistent.
+          Track strength sessions, goal progress, and share your milestones — with routine tools available in Premium.
+        </p>
+
+        <!-- simple navigation -->
+        <div class="nav">
+          <a href="./landing.html">Home</a>
+          <a href="./support.html">Support</a>
+          <a href="https://www.termsfeed.com/live/36d54b38-b621-45df-bd9b-4c9aff41f9ea" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <a href="https://www.termsfeed.com/live/dcf07289-9d67-4938-9a45-8d9a62e805a6" target="_blank" rel="noopener noreferrer">Terms</a>
+        </div>
+      </header>
+
+      <main>
+        <!-- LEFT COLUMN -->
+        <div>
+          <section>
+            <h2><span class="section-icon">✅</span> What FitML Helps You Do</h2>
+            <ul>
+              <li><strong>Track workouts fast</strong> — sets, reps, weight, history.</li>
+              <li><strong>See progress clearly</strong> — recent performance trends and bests.</li>
+              <li><strong>Set goals</strong> — track when you hit them and stay on pace.</li>
+              <li><strong>Share results</strong> — workouts, records, goal hits, and exercises.</li>
+              <li>
+                <strong>Generate + analyze routines</strong>
+                <span class="badge">Premium</span>
+              </li>
+            </ul>
+
+            <div class="cta-row">
+              <!-- Replace the # with your App Store link -->
+              <a class="btn" href="#" target="_blank" rel="noopener noreferrer"> Download on the App Store</a>
+              <a class="btn" href="./support.html">Need help?</a>
+            </div>
+
+            <div class="pill">
+              <span>📌</span>
+              <span>Built for lifters who want real insights, not clutter.</span>
+            </div>
+          </section>
+
+          <section>
+            <h2><span class="section-icon">📈</span> Why It’s Different</h2>
+            <p class="meta" style="margin-top:0;">
+              FitML focuses on consistency and clarity — your history and progress are easy to review, and your
+              milestones are easy to share.
+            </p>
+            <ul>
+              <li>Clean tracking flow designed for daily use</li>
+              <li>Progress views that actually answer “am I improving?”</li>
+              <li>Share cards that look good instantly</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2><span class="section-icon">💎</span> Premium</h2>
+            <p>
+              Premium is for users who want planning + deeper analysis.
+            </p>
+            <ul>
+              <li>Routine generation</li>
+              <li>Routine analysis</li>
+            </ul>
+            <p class="meta" style="margin-top:10px;">
+              (Add or remove items here as your premium feature set evolves.)
+            </p>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div>
+          <section>
+            <h2><span class="section-icon">🏋️‍♂️</span> Who It’s For</h2>
+            <ul>
+              <li>People training for strength or hypertrophy</li>
+              <li>Anyone who wants better workout insights</li>
+              <li>Lifters who like clean history and stats</li>
+              <li>Users who want to share wins</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2><span class="section-icon">🆘</span> Support</h2>
+            <p class="meta" style="margin-top:0;">
+              Questions, issues, or feedback?
+            </p>
+            <div class="support-email">
+              <span>📩</span>
+              <span><a href="mailto:fitMLapp@yahoo.com">fitMLapp@yahoo.com</a></span>
+            </div>
+            <div class="meta">Typical response time: 24–48 hours</div>
+            <p style="margin-top:10px;">
+              Visit the <a href="./support.html">Help Center</a> for common topics and troubleshooting.
+            </p>
+          </section>
+
+          <section>
+            <h2><span class="section-icon">📷</span> Screenshots</h2>
+            <p class="meta" style="margin-top:0;">
+              Add 2–4 app screenshots here later (optional).
+            </p>
+            <ul>
+              <li>Progress / analytics screen</li>
+              <li>Workout logging screen</li>
+              <li>Share card example</li>
+            </ul>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <div>
+          <span class="footer-highlight">FitML</span> 🏋️‍♂️ — Track smarter • Progress faster • Stay consistent.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

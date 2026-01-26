@@ -40,7 +40,7 @@ Create share cards for:
 ## Download
 
 **FitML is available on iOS.**  
-(Insert App Store link here)
+https://apps.apple.com/us/app/fitml-workout-tracker/id6746139404
 
 ---
 
@@ -48,8 +48,9 @@ Create share cards for:
 
 Premium is for users who want deeper planning and analytics:
 - Routine generation
-- Routine analysis
-- (Any other premium features you want to list)
+- Fitness progress
+- Suggested Alternatives
+- 
 
 ---
 
@@ -60,7 +61,7 @@ Need help or want to request a feature?
 Email: **fitMLapp@yahoo.com**  
 Typical response time: **24–48 hours**
 
-Support page: (link to your existing support page)
+Support page: https://fitmlapp.github.io/
 
 ---
 
